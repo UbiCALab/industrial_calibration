@@ -44,13 +44,13 @@ namespace industrial_extrinsic_cal {
 
       // read in all moving cameras
       int n_moving=0;
-      const YAML::Node& camera_parameters2 = parseNode(camera_doc, "moving_cameras");
-      for (unsigned int i = 0; i < camera_parameters2.size(); i++){
-	shared_ptr<Camera> temp_camera = parseSingleCamera(camera_parameters2[i]);
-	temp_camera->is_moving_ = true;
-	cameras.push_back(temp_camera);
-	  n_moving++;
-      }
+      //const YAML::Node& camera_parameters2 = parseNode(camera_doc, "moving_cameras");
+      //for (unsigned int i = 0; i < camera_parameters2.size(); i++){
+	//shared_ptr<Camera> temp_camera = parseSingleCamera(camera_parameters2[i]);
+	//temp_camera->is_moving_ = true;
+	//cameras.push_back(temp_camera);
+	  //n_moving++;
+      //}
 
       ROS_INFO_STREAM((int) cameras.size() << " cameras " <<n_static <<" static " << n_moving << " moving");
     }

@@ -833,14 +833,14 @@ void  ROSCameraObserver::dynReConfCallBack(industrial_extrinsic_cal::circle_grid
     circle_params.minInertiaRatio = 0.1f;
     circle_params.maxInertiaRatio = std::numeric_limits<float>::max();
   
-    circle_params.filterByConvexity = false;
-    circle_params.minConvexity = 0.95f;
+    circle_params.filterByConvexity = true; // false;
+    circle_params.minConvexity = 0.87; // 0.95f;
     circle_params.maxConvexity = std::numeric_limits<float>::max();
 
     circle_detector_ptr_ = cv::CircleDetector::create(circle_params);
 
     cv::SimpleBlobDetector::Params blob_params;
-    blob_params.thresholdStep = 10;
+    blob_params.thresholdStep = 8; // 10;
     blob_params.minThreshold = config.min_threshold;
     blob_params.maxThreshold = config.max_threshold;
     blob_params.minRepeatability = 2;
